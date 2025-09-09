@@ -1,6 +1,7 @@
 # Lab: C# & LINQ Warm-Up
 
 **Duration:** \~1 hour
+
 **Context:** You are consultants working with a healthcare provider who want quick insights from outpatient appointment data.
 
 ---
@@ -19,7 +20,7 @@ By the end of this lab, you will be able to:
 
 ## Scene Setting — Healthcare Consultancy
 
-A regional NHS Trust has asked your consultancy team to prototype an analytics tool for outpatient appointments.
+A regional healthcare provider has asked your consultancy team to prototype an analytics tool for outpatient appointments.
 
 They don’t want a full product yet — just quick answers to a few important questions using the data they already have.
 
