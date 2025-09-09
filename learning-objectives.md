@@ -1,0 +1,5 @@
+- Explain the MVC (Model-View-Controller) architecture pattern and how it separates concerns in web applications
+- Implement dependency injection in ASP.NET Core using constructor injection, built-in IoC container, and service registration
+- Configure service lifetimes (Transient, Scoped, Singleton) and understand when to use each approach
+- Create and structure an ASP.NET Core MVC application with proper separation of concerns using controllers, models, and views
+- Analyze how dependency injection promotes loose coupling and enhances testability in web applications
