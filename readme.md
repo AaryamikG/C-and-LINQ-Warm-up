@@ -1,12 +1,12 @@
 # Lab: C# & LINQ Warm-Up
 
-**Duration:** \~1 hour
+Duration: ~1 hour
 
-**Context:** You are consultants working with a healthcare provider who want quick insights from outpatient appointment data.
+Context: You are consultants working with a healthcare provider who want quick insights from outpatient appointment data.
 
 ---
 
-## Learning Objectives
+#### Learning Objectives
 
 By the end of this lab, you will be able to:
 
@@ -18,17 +18,17 @@ By the end of this lab, you will be able to:
 
 ---
 
-## Scene Setting — Healthcare Consultancy
+#### Scene Setting — Healthcare Consultancy
 
 A regional healthcare provider has asked your consultancy team to prototype an analytics tool for outpatient appointments.
 
 They don’t want a full product yet — just quick answers to a few important questions using the data they already have.
 
-You’ve been given a **starter ASP.NET Core MVC project** with models, a service interface, and seeded in-memory data. Your job is to implement **LINQ queries** to answer the Trust’s questions and return results through a service that can later be plugged into controllers/views.
+You’ve been given a starter ASP.NET Core MVC project with models, a service interface, and seeded in-memory data. Your job is to implement LINQ queries to answer the Trust’s questions and return results through a service that can later be plugged into controllers/views.
 
 ---
 
-## Starter Project
+#### Starter Project
 
 The repository contains:
 
@@ -55,15 +55,15 @@ The repository contains:
 
 The `InMemoryDataContext` already provides lists of `Appointment`, `Clinician`, and `Department`. You don't need to load CSVs.
 
-You will implement methods inside **`ReportsService`** that consume `IDataContext` and return the answers, then expose them through **controller actions**.
+You will implement methods inside `ReportsService` that consume `IDataContext` and return the answers, then expose them through controller actions.
 
 ---
 
-## Your Tasks
+#### Your Tasks
 
-### 1. Explore the Project (5 min)
+#### 1. Explore the Project (5 min)
 
-* Open the solution and identify where **models**, **services**, **controllers**, and **DI registration** live.
+* Open the solution and identify where models, services, controllers, and DI registration live.
 * Find the `ReportsService`. Notice that it receives `IDataContext` via constructor injection.
 * Look at the `ReportsController` - it's set up to use your service.
 
@@ -71,23 +71,23 @@ You will implement methods inside **`ReportsService`** that consume `IDataContex
 
 ---
 
-### 2. LINQ Queries (25 min)
+#### 2. LINQ Queries (25 min)
 
 Implement the following methods in `ReportsService`. Use LINQ queries to work with the in-memory collections.
 
-1. **No-show rate per department**
+1. No-show rate per department
 
    * Group by `Department.Name`.
    * Count how many appointments have outcome `NoShow` vs total.
    * Return department name + no-show rate.
 
-2. **Top 3 clinicians this month**
+2. Top 3 clinicians this month
 
    * Filter appointments to those with outcome `Completed` in the current month.
    * Group by clinician.
    * Return the top 3 with the highest completed count.
 
-3. **Average wait time (days) per specialty**
+3. Average wait time (days) per specialty
 
    * Compute difference between `ScheduledStartUtc` and `BookedUtc`.
    * Group by clinician specialty.
@@ -97,7 +97,7 @@ Implement the following methods in `ReportsService`. Use LINQ queries to work wi
 
 ---
 
-### 3. Add Controller Actions (10 min)
+#### 3. Add Controller Actions (10 min)
 
 * In `ReportsController`, add three actions that call your service methods.
 * Each action should return a simple JSON result.
@@ -105,39 +105,37 @@ Implement the following methods in `ReportsService`. Use LINQ queries to work wi
 
 ---
 
-### 4. Test Your Application (10 min)
+#### 4. Test Your Application (10 min)
 
 * Run the application (`dotnet run`).
 * Test both the console output and the web endpoints:
-  * Console: Check that your numbers make sense by spot-checking a few rows in the seed data.
-  * Web: Visit `/Reports/NoShowRates`, `/Reports/TopClinicians`, and `/Reports/WaitTimes` in your browser.
+   * Console: Check that your numbers make sense by spot-checking a few rows in the seed data.
+   * Web: Visit `/Reports/NoShowRates`, `/Reports/TopClinicians`, and `/Reports/WaitTimes` in your browser.
 
 ---
 
-### 5. Reflection & PR (10 min)
+#### 5. Reflection & PR (10 min)
 
-* Create a **pull request** with your work.
+* Create a pull request with your work.
 * In the PR description, answer these reflection prompts (2–3 sentences each):
 
-1. **LINQ:** Which operator (`GroupBy`, `Select`, `Average`, etc.) did you find most useful in this lab, and why?
-2. **Dependency Injection:** Why is constructor injection preferable to creating a new `InMemoryDataContext` inside your service?
-3. **MVC Separation:** Now that you've implemented both console output and web endpoints, which parts of your code stayed the same, and which parts were different between the two approaches?
+1. LINQ: Which operator (`GroupBy`, `Select`, `Average`, etc.) did you find most useful in this lab, and why?
+2. Dependency Injection: Why is constructor injection preferable to creating a new `InMemoryDataContext` inside your service?
+3. MVC Separation: Now that you've implemented both console output and web endpoints, which parts of your code stayed the same, and which parts were different between the two approaches?
 
 ---
 
-## Stretch Goals (if time allows)
+#### Stretch Goals (if time allows)
 
 * Add a filter parameter to your “Top 3 clinicians” method so it can return results for a given specialty.
 * Add a method for “Distribution of appointment outcomes by department”.
 
 ---
 
-## Deliverables
+#### Deliverables
 
 * Updated `ReportsService` with working LINQ methods.
 * Three controller actions that return JSON data.
 * Console output that shows answers for the three business questions.
 * Working web endpoints accessible via browser.
 * A pull request with reflective answers to the three questions above.
-
-

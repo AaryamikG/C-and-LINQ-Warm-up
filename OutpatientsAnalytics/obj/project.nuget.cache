@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "uDYXuXR59b0=",
+  "dgSpecHash": "0xP4su2OPA4=",
   "success": true,
-  "projectFilePath": "/Users/kevincunningham/code/ga/csharp-labs/lab1/OutpatientsAnalytics/OutpatientsAnalytics.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/suresh/sureshsigera/2026/deloitte-fse-bootcamp-2026/csharp/Lab-1-C-and-LINQ-Warm-up/OutpatientsAnalytics/OutpatientsAnalytics.csproj",
+  "expectedPackageFiles": [
+    "/Users/suresh/.nuget/packages/microsoft.netcore.app.ref/9.0.19/microsoft.netcore.app.ref.9.0.19.nupkg.sha512",
+    "/Users/suresh/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.19/microsoft.aspnetcore.app.ref.9.0.19.nupkg.sha512",
+    "/Users/suresh/.nuget/packages/microsoft.netcore.app.host.osx-arm64/9.0.19/microsoft.netcore.app.host.osx-arm64.9.0.19.nupkg.sha512"
+  ],
   "logs": []
 }
